@@ -1,0 +1,361 @@
+/* ================= PRELOADER ================= */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #e9f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2000;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader {
+  text-align: center;
+}
+.loader .earth {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00d4ff, #007bff);
+  animation: spin 2s linear infinite;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.4);
+  margin-bottom: 15px;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.loader p {
+  font-weight: 500;
+  color: #007bff;
+}
+
+/* ================= ROOT + BODY ================= */
+:root {
+  --primary-gradient: linear-gradient(135deg, #007bff, #00d4ff);
+  --accent-gradient: linear-gradient(135deg, #ff7b00, #ffb700);
+  --text-dark: #0a2540;
+  --bg-light: #f5f9ff;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  scroll-behavior: smooth;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+body.loaded { opacity: 1; }
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  transition: all 0.4s ease;
+}
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.text-gradient {
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= BUTTONS ================= */
+.btn-gradient {
+  background: var(--primary-gradient);
+  color: white;
+  transition: all 0.4s ease;
+  border: none;
+}
+.btn-gradient:hover {
+  background: var(--accent-gradient);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 123, 0, 0.4);
+}
+
+/* ================= HERO SECTION ================= */
+#hero {
+  padding: 150px 0 100px;
+  background: linear-gradient(180deg, #e9f5ff 0%, #f8fbff 100%);
+  overflow: hidden;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  display: inline-block;
+  animation: floatParallax 6s ease-in-out infinite;
+  z-index: 1;
+}
+@keyframes floatParallax {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: transparent;
+  filter: blur(90px);
+  animation: pulse 5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+.hero-img {
+  position: relative;
+  z-index: 3;
+  animation: fadeInFloat 1.2s ease forwards, float 3s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes fadeInFloat {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ====== HERO FLOATING ELEMENTS ====== */
+.floating-card {
+  position: absolute;
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.5s ease forwards;
+}
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Each floating element with staggered delay */
+.profile-card { bottom: 15%; left: -15%; width: 220px; animation-delay: 0.8s; }
+.stats-card { right: -10%; top: 20%; width: 120px; animation-delay: 1s; }
+.floating-btn { left: -10%; top: 60%; animation-delay: 1.2s; }
+
+.profile-card, .stats-card, .floating-btn {
+  z-index: 5;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+.profile-card:hover, .stats-card:hover, .floating-btn:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.hero-img, .profile-card, .stats-card, .floating-btn {
+  filter: drop-shadow(0 8px 25px rgba(0, 180, 255, 0.2));
+}
+.hero-img:hover {
+  filter: drop-shadow(0 12px 35px rgba(0, 180, 255, 0.4));
+  transition: filter 0.4s ease;
+}
+
+/* Profile Card */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profile-card .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Stats Card */
+.stats-card .circle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+}
+.stats-card svg {
+  transform: rotate(-90deg);
+  width: 70px;
+  height: 70px;
+}
+.stats-card .bg {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 2.8;
+}
+.stats-card .progress {
+  fill: none;
+  stroke: #ff4d4d;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+}
+.stats-card .percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: #ff4d4d;
+}
+
+/* Floating Button */
+.floating-btn {
+  background: #fff;
+  color: #007bff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  animation: floatRotate 6s ease-in-out infinite;
+}
+@keyframes floatRotate {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-12px) rotate(8deg); }
+}
+
+/* ================= FEATURES ================= */
+#features .feature-box {
+  padding: 40px;
+  border-radius: 25px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+}
+#features .feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
+#features i {
+  display: inline-block;
+  font-size: 45px;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+#features .feature-box:hover i {
+  transform: scale(1.2) rotate(8deg);
+  filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
+}
+
+/* ================= DESTINATION CARDS ================= */
+.destination-card {
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.destination-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15);
+}
+.destination-card img {
+  transition: all 0.4s ease;
+}
+.destination-card:hover img { transform: scale(1.1); }
+
+/* ================= CTA ================= */
+#cta .bg-gradient {
+  background: linear-gradient(45deg, #007bff, #00d4ff, #007bff);
+  background-size: 400% 400%;
+  animation: gradientFlow 6s ease infinite;
+}
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= PLANE ANIMATION ================= */
+.plane-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.plane {
+  position: absolute;
+  width: 50px;
+  filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.6));
+  animation: flyPlane 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  
+}
+
+/* Plane Flight Path */
+@keyframes flyPlane {
+  0% {
+    top: 75%;
+    left: -10%;
+    transform: rotate(15deg) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  40% {
+    top: 20%;
+    left: 60%;
+    transform: rotate(-10deg) scale(1.05);
+  }
+  70% {
+    top: 10%;
+    left: 110%;
+    transform: rotate(-20deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    top: 10%;
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+/* Optional Glow Trail */
+.plane::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0,212,255,0.8), transparent);
+  filter: blur(2px);
+  animation: trailPulse 1s ease-in-out infinite;
+}
+@keyframes trailPulse {
+  0%, 100% { opacity: 0.6; width: 80px; }
+  50% { opacity: 1; width: 100px; }
+}
+
+
+/* ================= FOOTER ================= */
+footer ul li { transition: color 0.3s ease; }
+footer ul li:hover { color: #007bff; cursor: pointer; }
+
+

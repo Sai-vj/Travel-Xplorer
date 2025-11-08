@@ -1,0 +1,41 @@
+:root {
+  --primary-color: #007bff;
+  --dark-color: #0d0d0d;
+  --light-color: #ffffff;
+  --accent-color: #ff7b00;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero */
+#hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #007bff, #00b3ff);
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background-color: #ff9a33;
+}

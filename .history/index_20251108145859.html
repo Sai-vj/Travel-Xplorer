@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelXplorer</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= PRELOADER ================= -->
+  <div id="preloader">
+    <div class="loader">
+      <div class="earth"></div>
+      <p>Exploring the World...</p>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3 text-gradient" href="#">TravelXplorer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-4">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a href="#" class="btn btn-gradient rounded-pill px-4">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+ <!-- ================= HERO SECTION ================= -->
+<section id="hero" class="d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <button class="btn btn-news mb-3">Get update news <i class="bi bi-arrow-right"></i></button>
+        <h1 class="fw-bold display-5 text-dark">Your Ultimate<br>Travel Companion</h1>
+        <p class="text-muted mt-3 mb-4">Discover, plan, and explore with ease using <b>TravelXplorer</b> – the all-in-one travel app that empowers you to create unforgettable journeys.</p>
+        <div class="search-box d-flex align-items-center shadow-sm rounded-4 p-3 bg-white">
+          <div class="me-4">
+            <small class="text-uppercase text-muted">Location</small>
+            <h6 class="mb-0 fw-semibold">Coimbatore, India</h6>
+          </div>
+          <div class="me-4">
+            <small class="text-uppercase text-muted">Date</small>
+            <h6 class="mb-0 fw-semibold">06 November 2025</h6>
+          </div>
+          <!--<button class="btn btn-gradient rounded-circle btn-lg"><i class="bi bi-search"></i></button>-->
+        </div>
+      </div>
+
+      <!-- Right (Animated Hero) -->
+      <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="fade-left">
+        <div class="position-relative hero-image-wrapper">
+          <div class="hero-bg"></div>
+          <img src="assets/heor0girl1.png" alt="Traveler" class="img-fluid hero-img">
+
+          <!-- Floating Profile Card -->
+          <div class="floating-card profile-card shadow">
+            <img src="assets/avatar1.png" alt="Annette" class="avatar">
+            <div>
+              <h6 class="mb-0 fw-semibold">Vishnu</h6>
+              <small class="text-muted">Director, Producer</small>
+              <div class="d-flex gap-3 mt-2 small">
+                <span><i class="bi bi-heart-fill text-danger"></i> 1.4k</span>
+                <span><i class="bi bi-chat-fill text-success"></i> 30+</span>
+                <span><i class="bi bi-people-fill text-primary"></i> 1000+</span>
+              </div>
+            </div>
+          </div>
+            <!-- Flying Plane Animation -->
+  <div class="plane-path">
+    <img src="assets/plane-icon1.png" alt="plane" class="plane" />
+  </div>
+
+
+          <!-- Floating Stats Card -->
+          <div class="floating-card stats-card shadow">
+            <div class="circle">
+              <svg viewBox="0 0 36 36">
+                <path class="bg" d="M18 2.0845 a15.9155 15.9155 0 0 1 0 31.831 a15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path class="progress" stroke-dasharray="47, 100" d="M18 2.0845 a15.9155 15.9155 0 0 1 0 31.831 a15.9155 15.9155 0 0 1 0 -31.831"/>
+              </svg>
+              <div class="percent">47%</div>
+            </div>
+            <small class="text-muted">Restless</small>
+          </div>
+
+          <!-- Floating Search Icon -->
+          <div class="floating-btn shadow">
+            <i class="bi bi-search"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================= FEATURES ================= -->
+  <section id="features" class="py-5">
+    <div class="container text-center">
+      <p class="text-gradient fw-semibold mb-2">WHAT WE SERVE</p>
+      <h2 class="fw-bold mb-5 text-dark">Top Values For You</h2>
+      <div class="row g-4">
+        <div class="col-md-3" data-aos="zoom-in">
+          <div class="feature-box">
+            <i class="bi bi-briefcase"></i>
+            <h5>Lot of Choices</h5>
+            <p>Explore endless possibilities for your next trip.</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="150">
+          <div class="feature-box">
+            <i class="bi bi-airplane"></i>
+            <h5>Best Tour Guide</h5>
+            <p>Travel with trusted professionals and experts.</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+          <div class="feature-box">
+            <i class="bi bi-house"></i>
+            <h5>Easy Booking</h5>
+            <p>Book flights, hotels, and experiences instantly.</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="450">
+          <div class="feature-box">
+            <i class="bi bi-heart"></i>
+            <h5>Memorable Trips</h5>
+            <p>Make every moment count with TravelXplorer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DESTINATIONS ================= -->
+ <!-- ================= DESTINATIONS (Animated Carousel) ================= -->
+<section id="destinations" class="py-5 bg-light">
+  <div class="container text-center">
+    <p class="text-gradient fw-semibold mb-2">TOP DESTINATIONS</p>
+    <h2 class="fw-bold mb-5 text-dark">Explore Top Destinations</h2>
+
+    <div class="destination-slider position-relative">
+      <button class="slide-btn prev"><i class="bi bi-chevron-left"></i></button>
+
+      <div class="destination-track d-flex">
+        <!-- Repeatable Destination Cards -->
+        <div class="destination-card">
+          <div class="image-wrapper">
+            <img src="assets/dest1.png" alt="Destination">
+            <div class="shine"></div>
+            <div class="price-tag">$240
+              <div></div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h5>Enjoy the Beauty of North Africa</h5>
+            <p class="text-muted">Sahara, Africa</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <div class="image-wrapper">
+            <img src="assets/dest2.png" alt="Destination">
+            <div class="shine"></div>
+            <div class="price-tag">$340</div>
+          </div>
+          <div class="card-body">
+            <h5>Fly in Cappadocia</h5>
+            <p class="text-muted">Turkey</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <div class="image-wrapper">
+            <img src="assets/dest3.png" alt="Destination">
+            <div class="shine"></div>
+            <div class="price-tag">$420</div>
+          </div>
+          <div class="card-body">
+            <h5>Relax by the Lake</h5>
+            <p class="text-muted">Slovenia</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <div class="image-wrapper">
+            <img src="assets/dest5.png" alt="Destination">
+            <div class="shine"></div>
+            <div class="price-tag">$260</div>
+          </div>
+          <div class="card-body">
+            <h5>Adventures in Bali</h5>
+            <p class="text-muted">Indonesia</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <div class="image-wrapper">
+            <img src="assets/dest4.png" alt="Destination">
+            <div class="shine"></div>
+            <div class="price-tag">$520</div>
+            
+          </div>
+          <div class="card-body">
+            <h5>Snow Escape</h5>
+            <p class="text-muted">Switzerland</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="slide-btn next"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- ================= CTA ================= -->
+  <section id="cta" class="py-5 text-center text-white">
+    <div class="container p-5 rounded-5 bg-gradient position-relative overflow-hidden" data-aos="fade-up">
+      <h2 class="fw-bold mb-3">Start Your Adventure Today!</h2>
+      <p class="mb-4">Download the app and explore the world effortlessly.</p>
+      <a href="#" class="btn btn-light rounded-pill px-4 py-2 fw-semibold">Get Started Now</a>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      
+      <!-- Left Side: Info -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <p class="text-gradient fw-semibold mb-2">CONTACT US</p>
+        <h2 class="fw-bold mb-4 text-dark">Let’s Plan Your Next Adventure</h2>
+        <p class="text-muted mb-4">
+          Have a question or ready to explore your next destination?  
+          Our travel experts are here to help you every step of the way.
+        </p>
+
+        <div class="contact-info">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-geo-alt-fill text-gradient fs-4 me-3"></i>
+            <span>123 Explorer Street, Travel City</span>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-telephone-fill text-gradient fs-4 me-3"></i>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="bi bi-envelope-fill text-gradient fs-4 me-3"></i>
+            <span>support@travelxplorer.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Form -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="contact-card p-4 p-md-5 shadow-lg rounded-4">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" class="form-control form-control-lg" rows="4" placeholder="Type your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gradient rounded-pill px-5 py-2 fw-semibold">
+              Send Message <i class="bi bi-send ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-5 bg-light text-muted">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-dark mb-3">Get In Touch</h5>
+          <p>We love hearing from our travelers!</p>
+          <div class="d-flex gap-3">
+            <i class="bi bi-facebook fs-4 text-primary"></i>
+            <i class="bi bi-instagram fs-4 text-danger"></i>
+            <i class="bi bi-twitter fs-4 text-info"></i>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-dark mb-3">Company Info</h5>
+          <ul class="list-unstyled"><li>About Us</li><li>Careers</li><li>We’re Hiring</li><li>Blog</li></ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-dark mb-3">Features</h5>
+          <ul class="list-unstyled"><li>Marketing</li><li>User Analytics</li><li>Live Chat</li><li>Support</li></ul>
+        </div>
+      </div>
+      <div class="text-center border-top pt-3 mt-3 small">© 2025 All rights reserved. TravelXplorer | Designed By Sai</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

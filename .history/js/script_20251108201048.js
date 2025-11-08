@@ -1,0 +1,149 @@
+// ========== PRELOADER + FADE-IN ==========
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+  const preloader = document.getElementById('preloader');
+  setTimeout(() => preloader.classList.add('hidden'), 600);
+  AOS.init({ duration: 1000, once: true });
+});
+
+// ========== NAVBAR SCROLL EFFECT ==========
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// ========== HERO PARALLAX EFFECT ==========
+const heroWrapper = document.querySelector('.hero-image-wrapper');
+document.addEventListener('mousemove', (e) => {
+  const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
+  const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+  heroWrapper.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+document.addEventListener('mouseleave', () => {
+  heroWrapper.style.transform = 'translate(0,0)';
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const percentEl = document.querySelector(".stats-card .percent");
+  let count = 0;
+  const target = 47;
+  const duration = 2000;
+  const step = duration / target;
+
+  const counter = setInterval(() => {
+    count++;
+    percentEl.textContent = count + "%";
+    if (count >= target) clearInterval(counter);
+  }, step);
+});
+
+// ======= Destination Carousel =======
+const track = document.querySelector(".destination-track");
+const nextBtn = document.querySelector(".slide-btn.next");
+const prevBtn = document.querySelector(".slide-btn.prev");
+
+let index = 0;
+const cardWidth = 330;
+const totalCards = document.querySelectorAll(".destination-card").length;
+const visibleCards = 3;
+
+function slide() {
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % (totalCards - visibleCards + 1);
+  slide();
+});
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + totalCards - visibleCards + 1) % (totalCards - visibleCards + 1);
+  slide();
+});
+
+// Auto-scroll carousel
+let autoSlide = setInterval(() => {
+  index = (index + 1) % (totalCards - visibleCards + 1);
+  slide();
+}, 4000);
+
+// Pause when hovering
+const slider = document.querySelector(".destination-slider");
+slider.addEventListener("mouseenter", () => clearInterval(autoSlide));
+slider.addEventListener("mouseleave", () => {
+  autoSlide = setInterval(() => {
+    index = (index + 1) % (totalCards - visibleCards + 1);
+    slide();
+  }, 4000);
+});
+
+
+// CTA entrance + button ripple
+document.addEventListener('DOMContentLoaded', () => {
+  // smooth enter when element is in view
+  const ctaBg = document.querySelector('#cta .bg-gradient');
+  if (ctaBg) {
+    // small intersection observer so it only animates when visible
+    const obs = new IntersectionObserver((entries, o) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('entered');
+          o.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    obs.observe(ctaBg);
+  }
+
+  // ripple on button click
+  const ctaBtn = document.querySelector('#cta .btn-light');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', (e) => {
+      const rect = ctaBtn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'cta-ripple';
+      // position ripple at click coordinates relative to button
+      ripple.style.left = `${e.clientX - rect.left}px`;
+      ripple.style.top = `${e.clientY - rect.top}px`;
+      ripple.style.width = ripple.style.height = `${Math.max(rect.width, rect.height) * 0.6}px`;
+      ctaBtn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 700);
+    });
+  }
+});
+
+// ================= COUNTER ANIMATION =================
+const counters = document.querySelectorAll('.counter');
+const speed = 100; // lower = faster
+
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const inc = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+};
+
+// Trigger when scrolled into view
+const section = document.querySelector('#about');
+let started = false;
+window.addEventListener('scroll', () => {
+  const sectionTop = section.getBoundingClientRect().top;
+  if (!started && sectionTop < window.innerHeight - 100) {
+    started = true;
+    animateCounters();
+  }
+});
+
+
+AOS.init({ duration: 1000, once: true });
+
