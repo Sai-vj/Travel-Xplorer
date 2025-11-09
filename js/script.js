@@ -194,3 +194,25 @@ document.addEventListener("DOMContentLoaded", () => {
   revealFeatures();
 });
 
+
+// ==================== TRAVEL ANIMATIONS CONTROL ====================
+window.addEventListener("load", () => {
+  const plane = document.querySelector(".sky-plane");
+  const bus = document.querySelector(".road-bus");
+
+  // Restart plane animation every 20 seconds
+  setInterval(() => {
+    plane.style.animation = "none";
+    void plane.offsetWidth;
+    plane.style.animation = "flyAcross 15s cubic-bezier(.4,0,.2,1)";
+  }, 20000);
+
+  // Restart bus animation every 25 seconds
+  setInterval(() => {
+    bus.style.animation = "none";
+    void bus.offsetWidth;
+    bus.style.animation = "driveBus 18s linear infinite alternate";
+  }, 25000);
+});
+
+

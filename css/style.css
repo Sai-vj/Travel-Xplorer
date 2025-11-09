@@ -24,6 +24,8 @@
 @keyframes spin { from {transform: rotate(0);} to {transform: rotate(360deg);} }
 .loader p { font-weight: 500; color: #007bff; }
 
+
+
 /* ================= ROOT + BODY ================= */
 :root {
   --text-dark: #0a2540;
@@ -55,6 +57,7 @@ body.loaded { opacity: 1; }
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
 
 /* ================= BUTTONS ================= */
 .btn-gradient {
@@ -123,6 +126,27 @@ body.loaded { opacity: 1; }
   transition: all 0.5s ease;
 }
 .hero-img:hover::after { left: 100%; transition: left 1s ease; }
+
+/*---------video ----------------*/
+.hero-video {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 580px;
+  height: 380px;
+  border-radius: 25px;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeInFloat 1.4s ease forwards, float 3s ease-in-out infinite;
+  box-shadow: 0 15px 45px rgba(0,150,255,0.25);
+  filter: drop-shadow(0 12px 40px rgba(0,180,255,0.4));
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 55px rgba(0,150,255,0.35);
+}
 
 /* ================= HERO FLOATING ELEMENTS (Stylish Animated) ================= */
 .floating-card {
@@ -292,12 +316,42 @@ body.loaded { opacity: 1; }
 .about-bg{position:absolute;top:50%;left:50%;width:400px;height:400px;background:radial-gradient(circle,#ffb6b6,#ff7b7b);border-radius:50%;transform:translate(-50%,-50%);z-index:0;filter:blur(60px);animation:pulseSoft 6s ease-in-out infinite;will-change:transform,opacity}
 @keyframes pulseSoft{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.8}50%{transform:translate(-50%,-50%) scale(1.1);opacity:1}}
 .about-img{position:relative;z-index:1;animation:float 5s ease-in-out infinite;will-change:transform}
-.stats-mini{position:absolute;bottom:10%;right:10%;background:#fff;z-index:2;transition:all .4s ease;padding:14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.stats-mini {
+  position: absolute;
+  bottom: 4%;
+  right: -10%;
+  background: #92eefa;
+  z-index: 5;
+  transition: all .4s ease;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
 .stats-mini:hover{transform:scale(1.05)}
 .avatars img{width:40px;height:40px;border-radius:40%;border:2px solid #ebcdcd;margin-right:-5px}
 
 /* counters (JS-driven) */
 .counter{font-weight:700;color:#0d6efd}
+
+.about-video {
+  position: relative;
+  z-index: 1;
+  width: 150%;
+  height: 480px;
+  max-width: 480px;
+  border-radius: 25px;
+  object-fit: cover;
+  animation: float 5s ease-in-out infinite, fadeInFloat 1.2s ease forwards;
+  box-shadow: 0 12px 40px rgba(0,150,255,0.25);
+  filter: drop-shadow(0 10px 30px rgba(0,180,255,0.4));
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 60px rgba(0,150,255,0.35);
+}
+
 
 /* ================= CONTACT SECTION ================= */
 #contact{background:linear-gradient(180deg,#f8fbff 0,#fff 100%);position:relative;overflow:hidden}
@@ -344,6 +398,54 @@ select::-ms-expand{display:none}
   .destination-card{min-width:250px}
   .contact-card{padding:20px}
 }
+
+/* ================= TRAVEL ANIMATIONS ================= */
+
+/* Flying Plane */
+.sky-plane {
+  position: fixed;
+  top: 30%;
+  left: -120px;
+  width: 80px;
+  height: 80px;
+  background: url("../assets/plane-icon1.png") no-repeat center/contain;
+  z-index: 3000;
+  animation: flyAcross 15s cubic-bezier(.4,0,.2,1) infinite;
+  filter: drop-shadow(0 0 15px rgba(0,180,255,0.6));
+  pointer-events: none;
+}
+
+@keyframes flyAcross {
+  0% { transform: translateX(0) translateY(0) rotate(10deg); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateX(60vw) translateY(-10vh) rotate(-5deg); opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(110vw) translateY(-20vh) rotate(-15deg); opacity: 0; }
+}
+
+/* Moving Bus */
+.road-bus {
+  position: fixed;
+  bottom: 30px;
+  left: -200px;
+  width: 150px;
+  height: 80px;
+  background: url("../assets/bus1.png") no-repeat center/contain;
+  z-index: 2000;
+  animation: driveBus 18s linear infinite;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,0.25));
+  pointer-events:none;
+  transform: scaleX(-1);
+}
+
+@keyframes driveBus {
+  0% { transform: translateX(-200px) rotate(0deg); opacity: 0; }
+  5% { opacity: 1; }
+  50% { transform: translateX(60vw) rotate(-1deg); opacity: 1; }
+  95% { opacity: 1; }
+  100% { transform: translateX(110vw) rotate(1deg); opacity: 0; }
+}
+
 
 /* ================= FINAL PERFORMANCE HINTS ================= */
 /* will-change applied to key moving elements above for GPU optimization */

@@ -11,6 +11,8 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
+
 <body>
 
   <!-- ================= PRELOADER ================= -->
@@ -87,7 +89,11 @@
       <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="fade-left">
         <div class="position-relative hero-image-wrapper">
           <div class="hero-bg"></div>
-          <img src="assets/heor0girl1.png" alt="Traveler" class="img-fluid hero-img">
+          <video autoplay muted loop playsinline class="hero-video">
+  <source src="assets/traveler-intro.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
           <!-- Floating Profile Card -->
           <div class="floating-card profile-card">
@@ -105,15 +111,18 @@
 
           <!-- Plane Animation -->
           <div class="plane-path">
-            <img src="assets/plane-icon1.png" alt="plane" class="plane">
+            <img src="assets/plane-icon3.png" alt="plane" class="plane">
           </div>
 
+       
+
+
           <!-- Floating Stats Card -->
-<div class="floating-card stats-card shadow">
+<!--<div class="floating-card stats-card shadow">
   <div class="circle">
     <svg viewBox="0 0 36 36">
       <defs>
-        <!-- Gradient for animated stroke -->
+        Gradient for animated stroke 
         <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stop-color="#ff4d4d">
             <animate attributeName="stop-color" values="#ff4d4d;#ff884d;#ff4d4d" dur="4s" repeatCount="indefinite"/>
@@ -133,8 +142,10 @@
 
     <div class="percent" data-target="47">0%</div>
   </div>
+
   <small class="text-muted d-block fw-semibold mt-2">Restless</small>
-  <small class="text-muted">Awake</small>
+  <small class="text-muted">Awake</small>-->
+
 </div>
 
           <!-- Floating Search Icon 
@@ -151,6 +162,8 @@
 
   <!-- ================= FEATURES ================= -->
   <section id="features" class="py-5">
+      
+
     <div class="container text-center">
       <p class="text-gradient fw-semibold mb-2">WHAT WE SERVE</p>
       <h2 class="fw-bold mb-5 text-dark">Top Values For You</h2>
@@ -334,7 +347,11 @@
       <div class="col-lg-6 text-center mb-4 mb-lg-0" data-aos="fade-right">
         <div class="position-relative about-img-wrapper">
           <div class="about-bg"></div>
-          <img src="assets/about-boy1.png" alt="Traveler" class="img-fluid about-img">
+          <video autoplay muted loop playsinline class="about-video">
+  <source src="assets/travel-destination.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
           <div class="floating-card stats-mini shadow-sm rounded-4 p-3">
             <h5 class="fw-bold text-dark mb-0"><span class="counter" data-target="45000">0</span>+</h5>
             <small class="text-muted">Happy Customers</small>
@@ -390,7 +407,7 @@
       <div class="col-md-4" data-aos="zoom-in">
         <div class="testimonial-card p-4 shadow-sm rounded-4 bg-white">
           <img src="assets/user1.jpeg" alt="Customer 1" class="testimonial-img mb-3">
-          <h5 class="fw-semibold mb-1">Annette Black</h5>
+          <h5 class="fw-semibold mb-1">Lisa</h5>
           <small class="text-muted d-block mb-2">Director, Producer</small>
           <div class="stars mb-3">
             <i class="bi bi-star-fill text-warning"></i>
@@ -533,6 +550,11 @@
       <div class="text-center border-top pt-3 mt-3 small">© 2025 All rights reserved. TravelXplorer | Designed By Sai</div>
     </div>
   </footer>
+
+  <!-- Global Travel Animations -->
+<div class="sky-plane"></div>
+<div class="road-bus"></div>
+
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
